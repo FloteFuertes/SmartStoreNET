@@ -454,6 +454,36 @@
     <Compile Include="Caching\ICacheManager.cs" />
     <Compile Include="Caching\NullCache.cs" />
     <Compile Include="Plugins\LoadPluginResult.cs" />
+    <Compile Include="Rules\IRuleVisitor.cs" />
+    <Compile Include="Rules\Domain\RuleEntity.cs" />
+    <Compile Include="Rules\Domain\RuleSetEntity.cs" />
+    <Compile Include="Rules\Filters\FilterExpressionGroup.cs" />
+    <Compile Include="Rules\Filters\ExpressionHelper.cs" />
+    <Compile Include="Rules\Filters\FilterDescriptor.cs" />
+    <Compile Include="Rules\Filters\FilterExpression.cs" />
+    <Compile Include="Rules\RuleModule.cs" />
+    <Compile Include="Rules\RuleDescriptorCollection.cs" />
+    <Compile Include="Rules\RuleScope.cs" />
+    <Compile Include="Rules\IRuleProvider.cs" />
+    <Compile Include="Rules\RuleExpressionGroup.cs" />
+    <Compile Include="Rules\RuleStorage.cs" />
+    <Compile Include="Rules\RuleValueSelectList.cs" />
+    <Compile Include="Rules\_Old\FilterExpressionBuilder.cs" />
+    <Compile Include="Rules\Filters\FilterExpressionVisitor.cs" />
+    <Compile Include="Rules\Filters\QueryableExtensions.cs" />
+    <Compile Include="Rules\Operators\ListOperators.cs" />
+    <Compile Include="Rules\Operators\StringOperators.cs" />
+    <Compile Include="Rules\_Old\MemberAccessTokenizer.cs" />
+    <Compile Include="Rules\IRuleConstraint.cs" />
+    <Compile Include="Rules\Operators\CommonOperators.cs" />
+    <Compile Include="Rules\Operators\NumericOperators.cs" />
+    <Compile Include="Rules\_Old\RuleAttribute.cs" />
+    <Compile Include="Rules\RuleExpression.cs" />
+    <Compile Include="Rules\RuleDescriptor.cs" />
+    <Compile Include="Rules\Exceptions\InvalidRuleOperatorException.cs" />
+    <Compile Include="Rules\RuleOperator.cs" />
+    <Compile Include="Rules\RuleFactory.cs" />
+    <Compile Include="Rules\RuleType.cs" />
     <Compile Include="Search\AcquireWriterContext.cs" />
     <Compile Include="Search\DefaultIndexManager.cs" />
     <Compile Include="Search\Events\IndexingCompletedEvent.cs" />
@@ -732,7 +762,9 @@
   <ItemGroup>
     <Compile Include="Infrastructure\ObjectSignatureAttribute.cs" />
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <Folder Include="Rules\Constraints\" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Import Project="$(SolutionDir)\.nuget\nuget.targets" />
   <PropertyGroup>

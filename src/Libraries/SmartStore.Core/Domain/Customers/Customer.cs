@@ -171,12 +171,33 @@ namespace SmartStore.Core.Domain.Customers
 		[DataMember, Index("IX_Customer_BirthDate")]
 		public DateTime? BirthDate { get; set; }
 
-		#region Navigation properties
+        [DataMember]
+        public string Gender { get; set; }
 
-		/// <summary>
-		/// Gets or sets customer generated content
-		/// </summary>
-		public virtual ICollection<ExternalAuthenticationRecord> ExternalAuthenticationRecords
+        [DataMember]
+        public int VatNumberStatusId { get; set; }
+
+        [DataMember]
+        public string TimeZoneId { get; set; }
+
+        [DataMember]
+        public int TaxDisplayTypeId { get; set; }
+
+        [DataMember]
+        public DateTime? LastForumVisit { get; set; }
+
+        [DataMember]
+        public string LastUserAgent { get; set; }
+
+        [DataMember]
+        public string LastUserDeviceType { get; set; }
+
+        #region Navigation properties
+
+        /// <summary>
+        /// Gets or sets customer generated content
+        /// </summary>
+        public virtual ICollection<ExternalAuthenticationRecord> ExternalAuthenticationRecords
         {
 			get { return _externalAuthenticationRecords ?? (_externalAuthenticationRecords = new HashSet<ExternalAuthenticationRecord>()); }
             protected set { _externalAuthenticationRecords = value; }
@@ -198,7 +219,7 @@ namespace SmartStore.Core.Domain.Customers
 		public virtual ICollection<CustomerRole> CustomerRoles
         {
 			get { return _customerRoles ?? (_customerRoles = new HashSet<CustomerRole>()); }
-            protected set { _customerRoles = value; }
+            protected internal set { _customerRoles = value; }
         }
 
         /// <summary>
@@ -217,7 +238,7 @@ namespace SmartStore.Core.Domain.Customers
 		public virtual ICollection<Order> Orders
         {
 			get { return _orders ?? (_orders = new HashSet<Order>()); }
-            protected set { _orders = value; }            
+            protected internal set { _orders = value; }            
         }
 
         /// <summary>
